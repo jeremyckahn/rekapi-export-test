@@ -30,6 +30,9 @@ require.config({
   }, {
     name: 'component.animation-input'
     ,location: 'scripts/components/animation-input'
+  }, {
+    name: 'component.animation-preview'
+    ,location: 'scripts/components/animation-preview'
   }]
 });
 

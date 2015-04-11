@@ -7,6 +7,7 @@ define([
   ,'text!./template.mustache'
 
   ,'component.animation-input'
+  ,'component.animation-preview'
 
 ], function (
 
@@ -17,6 +18,7 @@ define([
   ,template
 
   ,AniamtionInputComponent
+  ,AniamtionPreviewComponent
 
 ) {
   'use strict';
@@ -33,6 +35,11 @@ define([
       this.animationInputComponent = this.addComponent(
         AniamtionInputComponent, {
           el: this.view.$animationInput[0]
+        });
+
+      this.animationPreviewComponent = this.addComponent(
+        AniamtionPreviewComponent, {
+          el: this.view.$animationPreview[0]
         });
     }
   });
