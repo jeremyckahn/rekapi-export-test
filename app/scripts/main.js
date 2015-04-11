@@ -15,6 +15,8 @@ require.config({
     ,backbone: 'bower_components/backbone/backbone'
     ,underscore: 'bower_components/lodash/dist/lodash'
     ,mustache: 'bower_components/mustache/mustache'
+    ,shifty: 'bower_components/shifty/dist/shifty'
+    ,rekapi: 'bower_components/rekapi/dist/rekapi'
   }
   ,packages: [{
     name: 'lateralus'

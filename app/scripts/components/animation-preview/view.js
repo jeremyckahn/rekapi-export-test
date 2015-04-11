@@ -1,12 +1,14 @@
 define([
 
   'lateralus'
+  ,'rekapi'
 
   ,'text!./template.mustache'
 
 ], function (
 
   Lateralus
+  ,Rekapi
 
   ,template
 
