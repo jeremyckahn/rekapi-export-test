@@ -19,6 +19,22 @@ define([
   var AnimationInputComponentView = Base.extend({
     template: template
 
+    ,events: {
+      'change textarea': function () {
+        var textareaVal = this.$textarea.val();
+        var animationData;
+
+        try {
+          animationData = JSON.parse(textareaVal);
+        } catch (e) {
+          this.lateralus.error(e);
+          return;
+        }
+
+        this.emit('inputUpdated', animationData);
+      }
+    }
+
     /**
      * @param {Object} [options] See http://backbonejs.org/#View-constructor
      */
