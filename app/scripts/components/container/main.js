@@ -6,6 +6,8 @@ define([
   ,'./view'
   ,'text!./template.mustache'
 
+  ,'component.animation-input'
+
 ], function (
 
   Lateralus
@@ -13,6 +15,8 @@ define([
   ,Model
   ,View
   ,template
+
+  ,AniamtionInputComponent
 
 ) {
   'use strict';
@@ -24,6 +28,13 @@ define([
     ,Model: Model
     ,View: View
     ,template: template
+
+    ,initialize: function () {
+      this.animationInputComponent = this.addComponent(
+        AniamtionInputComponent, {
+          el: this.view.$animationInput[0]
+        });
+    }
   });
 
   return ContainerComponent;

@@ -27,6 +27,9 @@ require.config({
   }, {
     name: 'rekapi-export-test.component.container'
     ,location: 'scripts/components/container'
+  }, {
+    name: 'component.animation-input'
+    ,location: 'scripts/components/animation-input'
   }]
 });
 
@@ -39,5 +42,6 @@ require([
   RekapiExportTest
 
 ) {
-  window.rekapiExportTest = new RekapiExportTest(document.getElementById('rekapi-export-test'));
+  window.rekapiExportTest =
+    new RekapiExportTest(document.getElementById('rekapi-export-test'));
 });
