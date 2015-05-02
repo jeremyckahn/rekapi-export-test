@@ -1,15 +1,21 @@
-@import "compass/css3/flexbox"
-@import 'styles/variables.sass'
+@import compass/css3/flexbox
+@import styles/variables.sass
 
 .timeline-scrubber-view
   background: $chrome-background-color
   border-radius: $border-radius
   bottom: $timeline-scrubber-distance-from-corner
   left: $timeline-scrubber-distance-from-corner
-  padding: .5em 0
+  padding: .5em
   position: absolute
   +display-flex()
   +align-items(center)
+
+  button
+    background: none
+    border: none
+    color: $timeline-scrubber-button-color
+    font-size: 1.2em
 
   button,
   input
