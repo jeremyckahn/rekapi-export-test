@@ -36,6 +36,7 @@ define([
           actor.context = this.$actor[0];
         }.bind(this));
 
+        this.rekapi.update();
         this.emit('rekapiImportComplete', this.rekapi);
       }
 
