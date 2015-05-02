@@ -23,6 +23,10 @@ require.config({
     ,location: 'bower_components/lateralus/scripts'
     ,main: 'lateralus'
   }, {
+    name: 'codemirror'
+    ,location: 'bower_components/codemirror/lib'
+    ,main: 'codemirror'
+  }, {
     name: 'rekapi-export-test'
     ,location: 'scripts'
     ,main: 'rekapi-export-test'
