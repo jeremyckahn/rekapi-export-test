@@ -8,6 +8,7 @@ define([
 
   ,'component.animation-input'
   ,'component.animation-preview'
+  ,'component.timeline-scrubber'
 
 ], function (
 
@@ -19,6 +20,7 @@ define([
 
   ,AniamtionInputComponent
   ,AniamtionPreviewComponent
+  ,TimelineScrubberComponent
 
 ) {
   'use strict';
@@ -32,6 +34,11 @@ define([
     ,template: template
 
     ,initialize: function () {
+      this.timelineScrubberComponent = this.addComponent(
+        TimelineScrubberComponent, {
+          el: this.view.$timelineScrubber[0]
+        });
+
       this.animationInputComponent = this.addComponent(
         AniamtionInputComponent, {
           el: this.view.$animationInput[0]

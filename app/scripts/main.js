@@ -35,6 +35,9 @@ require.config({
   }, {
     name: 'component.animation-preview'
     ,location: 'scripts/components/animation-preview'
+  }, {
+    name: 'component.timeline-scrubber'
+    ,location: 'scripts/components/timeline-scrubber'
   }]
 });
 
