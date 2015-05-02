@@ -28,21 +28,17 @@ define([
       }
 
       /**
-       * @param {RekapiComponent} rekapiComponent
+       * @param {Rekapi} rekapi
        */
-      ,timelineModified: function (rekapiComponent) {
-        this.syncScrubberToRekapi(rekapiComponent);
+      ,rekapiImportComplete: function (rekapi) {
+        this.syncScrubberToRekapi(rekapi);
       }
 
       /**
-       * @param {RekapiComponent} rekapiComponent
+       * @param {Rekapi} rekapi
        */
-      ,animationHasUpdated: function (rekapiComponent) {
-        this.syncScrubberToRekapi(rekapiComponent);
-      }
-
-      ,userRequestToggleScrubber: function () {
-        this.hidableView.toggle();
+      ,rekapiHasUpdated: function (rekapi) {
+        this.syncScrubberToRekapi(rekapi);
       }
     }
 
@@ -80,19 +76,18 @@ define([
      */
     ,syncToRekapiPlayState: function (isPlaying) {
       if (isPlaying) {
-        this.$play.addClass('hide');
-        this.$pause.removeClass('hide');
+        this.$play.addClass('hid');
+        this.$pause.removeClass('hid');
       } else {
-        this.$play.removeClass('hide');
-        this.$pause.addClass('hide');
+        this.$play.removeClass('hid');
+        this.$pause.addClass('hid');
       }
     }
 
-    /**
-     * @param {RekapiComponent} rekapiComponent
-     */
-    ,syncScrubberToRekapi: function (rekapiComponent) {
-      var rekapi = rekapiComponent.rekapi;
+      /**
+       * @param {Rekapi} rekapi
+       */
+    ,syncScrubberToRekapi: function (rekapi) {
       var animationLength = rekapi.getAnimationLength();
       this.$scrubber
         .attr('max', animationLength)

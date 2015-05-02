@@ -31,7 +31,7 @@ define([
           return;
         }
 
-        this.emit('inputUpdated', animationData);
+        this.emit('animationChanged', animationData);
       }
     }
 
