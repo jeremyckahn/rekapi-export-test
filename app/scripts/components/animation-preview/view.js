@@ -30,11 +30,14 @@ define([
       animationChanged: function (animationData) {
         var rekapi = this.rekapi;
         _.each(rekapi.getAllActors(), rekapi.removeActor.bind(rekapi));
-        this.rekapi.importTimeline(animationData);
 
-        _.each(rekapi.getAllActors(), function (actor) {
-          actor.context = this.$actor[0];
-        }.bind(this));
+        // Stylie only exports single-actor animations currently, so just
+        // associate the first actor in the imported animation to the DOM
+        // element (actorEl) as a rendering context.
+        rekapi.importTimeline(animationData);
+        var actor = rekapi.getActor(rekapi.getActorIds()[0]);
+        var actorEl = this.$actor[0];
+        actor.context = actorEl;
 
         this.rekapi.update();
         this.emit('rekapiImportComplete', this.rekapi);
@@ -66,6 +69,9 @@ define([
      */
     ,initialize: function () {
       baseProto.initialize.apply(this, arguments);
+
+      // NOTE: Providing a DOM element as a rendering context to Rekapi sets up
+      // the DOMRenderer automatically.
       this.rekapi = new Rekapi(this.$el[0]);
 
       this.rekapi.on('afterUpdate', function () {
