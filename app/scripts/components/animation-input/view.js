@@ -40,6 +40,7 @@ define([
       });
 
       this.codeMirror.on('changes', this.onCodeMirrorChanges.bind(this));
+      this.codeMirror.on('focus', this.onCodeMirrorFocus.bind(this));
     }
 
     ,onCodeMirrorChanges: function () {
@@ -54,6 +55,10 @@ define([
       }
 
       this.emit('animationChanged', animationData);
+    }
+
+    ,onCodeMirrorFocus: function () {
+      this.codeMirror.execCommand('selectAll');
     }
   });
 
